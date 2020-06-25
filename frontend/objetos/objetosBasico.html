@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var users = [
+            {
+                name: "Michael", 
+                age:37
+            }, {
+                name: "John", 
+                age:30
+            }, {
+                name: "David", 
+                age:27
+            }
+        ];
+
+        // ¿Cómo harías print/log de la edad de John?
+        // opción 1
+        var person = users.find(user => user.name == "John");
+        console.log("Edad: ", person.age);
+        // opción 2
+        for (user in users){
+            if (users[user].name === "John"){
+                console.log("Edad: ", users[user].age);
+            }
+        }
+
+        // ¿Cómo harías print/log del nombre del primer objeto?
+        console.log("Primer elemento: ",users[0]);
+
+        // ¿Cómo harías print/log del nombre y la edad de cada usuario utilizando un for loop?
+        for (x in users){
+            console.log(`Nombre: ${users[x].name} - Edad: ${users[x].age}`);
+        }
+
+        // ¿Cómo harías para imprimir el nombre de los mayores de edad?
+        for (x in users){
+            if (users[x].age > 18 ){
+                console.log(`${users[x].name} es mayor de edad.`);
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
