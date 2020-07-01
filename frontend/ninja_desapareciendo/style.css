@@ -1,0 +1,16 @@
+*{
+    margin: 0px;
+    padding: 0px;
+
+}
+.wrapper{
+    width: 700px;
+    margin: 30px auto;
+}
+img {
+    width: 170px;
+    border: 1px solid blue;
+}
+.contenedor-img{
+    margin: 20px auto;
+}
