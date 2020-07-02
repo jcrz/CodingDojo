@@ -1,0 +1,25 @@
+*{
+    margin: 0px;
+    padding: 0px;
+
+    font-family: sans-serif;
+}
+.wrapper{
+    width: 700px;
+    min-height: 800px;
+    margin: 0px auto;
+    text-align: center;
+}
+.caja{
+    width: 500px;
+    margin: 20px auto;
+    border: 1px solid rgb(122, 122, 122);
+    border-radius: 7px;
+    padding: 10px;
+}
+.colorRojo{
+    color: red;
+}
+span{
+    color: blue;
+}

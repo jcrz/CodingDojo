@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            // click()
+            $('#btn-click').click(() => alert("Haz creado un evento!"));
+            // Hide() y Show()
+            $('#btn-ocultar').click(() => $('#titulo-hide-show').hide());
+            $('#btn-mostrar').click(() => $('#titulo-hide-show').show());
+            // Toggle()
+            $('#btn-toggle').click(() => $('#titulo-toggle').toggle("slow"));
+            // SlideDown()
+            $('#titulo-slideDown').hide();
+            $('#btn-slideDown').click(() => $('#titulo-slideDown').slideDown("slow"));
+            // SlideUp()
+            $('#btn-slideUp').click(() => $('#titulo-slideUp').slideUp("slow"));
+            // SlideToggle()
+            $('#btn-slideToggle').click(() => $('#titulo-slideToggle').slideToggle());
+            // FadeIn() FadeOut()
+            $('#btn-fadeOut').click(() => $('#titulo-fade').fadeOut("slow"));
+            $('#btn-fadeIn').click(() => $('#titulo-fade').fadeIn("slow"));
+            // AddClass()
+            $('#btn-add').click(() => $('#titulo-addClass').addClass('colorRojo'));
+            // before()
+            $('#btn-before').click(() => $('#p-before').before('<input type="text" placeholder="Mensaje..."/>'));
+            // after()
+            $('#btn-after').click(() => $('#p-after').after('<input type="text" placeholder="Mensaje..."/>'));
+            // Append()
+            $('#btn-append').click(() => $('#p-append').append('Aquí estoy:)'));
+            // html()
+            $('#btn-html').click(() => $('.contenedor').html('<p>Hola Mundo</p>'));
+            // attr()
+            $('#btn-attr').click(() => $('#titulo-attr').attr("class", "colorRojo"));
+            // val()
+            $('#emocion').change(() => {
+                var estadoE = $('#emocion').val();
+                $('span').html(estadoE);
+            });
+            // text()
+            $('#btn-text').click(() => $('#titulo-text').text('Attr actualizado!'));
+        });
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="caja">
+            <h1>Click</h1>
+            <p>Click en el boton para generar un 'alert'</p>
+            <button id="btn-click">Dame click!</button>
+        </div>
+        <div class="caja">
+            <h1 id="titulo-hide-show">Hide y Show</h1>
+            <p>Haz click en los botones para ocultar y mostrar el titulo de esta caja</p>
+            <button id="btn-ocultar">Ocultar</button>
+            <button id="btn-mostrar">Mostrar</button>
+        </div>
+        <div class="caja">
+            <h1 id="titulo-toggle">Toggle</h1>
+            <p>Haz click para desaparecer y aparecer el titulo en un tiempo determinado</p>
+            <button id="btn-toggle">Haz click</button>
+        </div>
+        <div class="caja">
+            <h1 id="titulo-slideDown">SlideDown</h1>
+            <p>Haz click para que veas el efecto...</p>
+            <button id="btn-slideDown">Haz click</button>
+        </div>
+        <div class="caja">
+            <h1 id="titulo-slideUp">SlideUp</h1>
+            <p>Haz click para que veas el efecto...</p>
+            <button id="btn-slideUp">Haz click</button>
+        </div>
+        <div class="caja">
+            <h1 id="titulo-slideToggle">SlideToggle</h1>
+            <p>Haz click para que veas el efecto...</p>
+            <button id="btn-slideToggle">Haz click</button>
+        </div>
+        <div class="caja">
+            <h1 id="titulo-fade">FadeIn FadeOut</h1>
+            <p>Haz click para que veas el efecto...</p>
+            <button id="btn-fadeOut">ocultar</button>
+            <button id="btn-fadeIn">mostrar</button>
+        </div>
+        <div class="caja">
+            <h1 id="titulo-addClass">AddClass</h1>
+            <p>Haz click para añadir una clase al titulo</p>
+            <button id="btn-add">Añadir</button>
+        </div>
+        <div class="caja">
+            <h1 id="titulo-before">Before</h1>
+            <p id="p-before">Haz click para añadir un elemento antes del parrafo</p>
+            <button id="btn-before">Añadir elemento</button>
+        </div>
+        <div class="caja">
+            <h1 id="titulo-after">After</h1>
+            <p id="p-after">Haz click para añadir un elemento despues del parrafo</p>
+            <button id="btn-after">Añadir elemento</button>
+        </div>
+        <div class="caja">
+            <h1 id="titulo-append">Append</h1>
+            <p id="p-append">Haz click para añadir contenido a el elemento P: </p>
+            <button id="btn-append">Añadir contenido</button>
+        </div>
+        <div class="caja">
+            <h1 id="titulo-append">Append</h1>
+            <p id="p-append">Haz click para añadir contenido a el elemento P: </p>
+            <button id="btn-append">Añadir contenido</button>
+        </div>
+        <div class="caja">
+            <h1 id="titulo-html">Html</h1>
+            <p>Haz click para añadir elementos a un objeto html</p>
+            <div class="contenedor"></div>
+            <button id="btn-html">Añadir</button>
+        </div>
+        <div class="caja">
+            <h1 id="titulo-attr" class="title">Attr</h1>
+            <p>Haz click para cambiar un atributo de la clase del elemento h1</p>
+            <button id="btn-attr">Haz click</button>
+        </div>
+        <div class="caja">
+            <h1 id="titulo-val">Val</h1>
+            <p>Haz click para capturar el valor del select, aquí: <span></span></p>
+            <select id="emocion">
+                <option>Feliz</option>
+                <option>Triste</option>
+                <option>enojado</option>
+            </select>
+        </div>
+        <div class="caja">
+            <h1 id="titulo-text">Attr</h1>
+            <p>Haz click para actualizar el contenido del titulo</p>
+            <button id="btn-text">Haz click</button>
+        </div>
+    </div>
+</body>
+</html>
