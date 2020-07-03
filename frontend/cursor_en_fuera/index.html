@@ -15,11 +15,11 @@
                                 // Guardamos las propiedades y metodos de la imagen.
                                 var originalImg = $(this); 
                                 // Guardamos el contenido del atributo data-alt-src
-                                var nuevaImg = originalImg.data('alt-src'); 
-                                // Asociamos (temporalmente) el contenido del src al alt-src (llave -> valor).
+                                var nuevaUrl = originalImg.data('alt-src'); 
+                                // Asociamos (temporalmente) el contenido del src al alt-src (estilo: llave -> valor).
                                 originalImg.data('alt-src', originalImg.attr('src'));
                                 // Actualizamos el valor del src.    
-                                originalImg.attr('src', nuevaImg);
+                                originalImg.attr('src', nuevaUrl);
                             };
 
             $(function () {
