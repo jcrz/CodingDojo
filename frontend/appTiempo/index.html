@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src='http://code.jquery.com/jquery-1.10.2.min.js'></script>
+    <title>App del tiempo</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style>
+        * {
+            outline: 1px solid black;
+        }
+        body {
+            background: rgb(24,129,154);
+            background: linear-gradient(90deg, rgba(24,129,154,1) 0%, rgba(7,226,216,1) 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center">
+        <div class="card my-5 rounded">
+            <div class="bg-dark py-5"></div>
+            <div class="card-body">
+                <img src="nt_rain.png" alt="clima" class="rounded-circle ">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+    </div>
+
+
+
+
+
+
+
+
+
+ 
+
+
+    <script>
+        $(document).ready(function(){
+            $('form').submit(function() {
+                // your code here (build up your url)
+                var ciudad  = $('input').val();
+                var api_key = "bce67e86e65158b64aa5086e0128c5a7"; 
+                var url     = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad},cl&appid=${api_key}`
+                
+                $.get(url, function(res) {
+                    console.log(res);
+                    // your code here
+                    var html_info = "";
+                    html_info += "<h2>" + res.name + "</h2>";
+                    html_info += "<h2>Temperatura: " + res.main.temp + "</h2>";
+                    html_info += "<h2>Coordenadas: " + res.coord.lat + ", " + res.coord.lon + "</h2>";
+                    $('.main').html(html_info);
+
+                }, 'json');
+                // don't forget to return false so the page doesn't refresh
+                return false;
+            });
+        });
+    </script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+</body>
+</html>

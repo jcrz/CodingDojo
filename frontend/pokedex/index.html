@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src='http://code.jquery.com/jquery-1.10.2.min.js'></script>
+</head>
+<body>
+    <div class="content">
+        <img id="1" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1.png" alt="imagen de pokemon">
+        <img id="2" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/2.png" alt="imagen de pokemon">
+        <img id="3" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/3.png" alt="imagen de pokemon">
+        <img id="4" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/4.png" alt="imagen de pokemon">
+        <img id="5" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/5.png" alt="imagen de pokemon">
+        <img id="6" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/6.png" alt="imagen de pokemon">
+        <img id="7" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/7.png" alt="imagen de pokemon">
+        <img id="8" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/8.png" alt="imagen de pokemon">
+        <img id="9" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/9.png" alt="imagen de pokemon">
+        <img id="10" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10.png" alt="imagen de pokemon">
+        <img id="11" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/11.png" alt="imagen de pokemon">
+        <img id="12" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/12.png" alt="imagen de pokemon">
+        <img id="13" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/13.png" alt="imagen de pokemon">
+        <img id="14" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/14.png" alt="imagen de pokemon">
+        <img id="15" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/15.png" alt="imagen de pokemon">
+        <img id="16" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/16.png" alt="imagen de pokemon">
+        <img id="17" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/17.png" alt="imagen de pokemon">
+        <img id="18" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/18.png" alt="imagen de pokemon">
+        <img id="19" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/19.png" alt="imagen de pokemon">
+        <img id="20" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/20.png" alt="imagen de pokemon">
+        <img id="21" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/21.png" alt="imagen de pokemon">
+        <img id="22" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/22.png" alt="imagen de pokemon">
+        <img id="23" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/23.png" alt="imagen de pokemon">
+        <img id="24" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/24.png" alt="imagen de pokemon">
+        <img id="25" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/25.png" alt="imagen de pokemon">
+        <img id="26" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/26.png" alt="imagen de pokemon">
+        <img id="27" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/27.png" alt="imagen de pokemon">
+        <img id="28" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/28.png" alt="imagen de pokemon">
+        <img id="29" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/29.png" alt="imagen de pokemon">
+        <img id="30" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/30.png" alt="imagen de pokemon">
+        <img id="31" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/31.png" alt="imagen de pokemon">
+        <img id="32" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/32.png" alt="imagen de pokemon">
+
+    </div>
+
+    <div class="costado">
+        <h2 id="name">Pokemon</h2>
+        <img id="foto" src="" alt="pokemon" height="200" width="200">
+        <h3>Type</h3>
+        <p id="type"></p>
+        <h3>Height</h3>
+        <p id="height"></p>
+        <h3>Weight</h3>
+        <p id="weight"></p>
+    </div>
+    
+
+    <script type="text/javascript">
+		$(document).ready(function(){
+
+            var contenido = '';
+            
+
+            $('img').click(function(){
+                var ide = this.id;
+                $.get(`https://pokeapi.co/api/v2/pokemon/${ide}`, function(res) {
+                    $("#type").html(res.types[0].type.name);
+                    $("#name").html(res.name);
+                    $("#height").html(res.height);
+                    $("#weight").html(res.weight);
+                    $('#foto').attr('src', `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${ide}.png`)
+                    console.log(res)
+                }, "json");
+
+                
+            })
+            
+		})
+	</script>
+
+    
+</body>
+</html>
