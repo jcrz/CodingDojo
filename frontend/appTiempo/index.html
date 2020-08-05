@@ -43,7 +43,7 @@
             $('form').submit(function() {
                 // your code here (build up your url)
                 var ciudad  = $('input').val();
-                var api_key = "bce67e86e65158b64aa5086e0128c5a7"; 
+                var api_key = ""; 
                 var url     = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad},cl&appid=${api_key}`
                 
                 $.get(url, function(res) {
