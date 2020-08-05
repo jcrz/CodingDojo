@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola mundo con Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        Hola, {{ message }}
+        
+        <div>
+            <p v-if="isState">Estado true.</p>
+        </div>
+        
+        <div>
+            <p v-if="algunNumero < 10">Número pequeño</p>
+            <p v-else-if="algunNumero < 100">Número mediano</p>
+            <p v-else>Número grande</p>
+        </div>
+
+        <p>Listado de Frutas:</p>
+        <div v-for="(fruta, indice) in items" v-bind:key="indice">
+            <!-- Repite todo lo que esta dentro del div -->
+            <li>{{ fruta }}</li>
+        </div>
+    </div>
+
+    
+    <!-- JS -->
+    <script src="app.js" ></script>
+</body>
+</html>

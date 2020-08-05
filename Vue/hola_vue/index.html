@@ -4,23 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hola mundo con Vue</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-    
-    <script>
+    <div id="app">
+        Hola, {{ message }}
+    </div>
 
-        $(document).ready(function() {
-            var horoscopo_global;
-
-            $.get(`https://api.adderou.cl/tyaas/`, function(res) {
-                horoscopo_global = res;
-            });
-
-            console.log(horoscopo_global);
-        });
-
-        
-    </script>
+    <!-- JS -->
+    <script src="index.js" ></script>
 </body>
 </html>
